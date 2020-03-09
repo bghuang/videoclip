@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import argparse
 
 def cut(filename, start, end, cuttype):
     assert os.path.exists(filename) is True, "The source file is ont exists."
@@ -18,7 +19,12 @@ def cut(filename, start, end, cuttype):
 
 
 if __name__ == "__main__":
-    file = input("需要截取的视频： ")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("videoname")
+    args = parser.parse_args()
+    file = os.path.basename(args.videoname)
+    print("开始裁剪视频文件:  %s" % (file))
+
     start = input("起始时间(HH:MM:SS): ")
     end = input("结束时间(HH:MM:SS): ")
     cuttype = input("截取方式（exact,fast,fastwithoutcarekeyframe):")
