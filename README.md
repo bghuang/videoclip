@@ -30,5 +30,6 @@ DESCRIPTION
       Start exact from [start time] without care about key frame. video will be redecoded by video codec: libx264 and audio codec: aac 
 
 AUTHOR
+
        Written by Huang, Baogui.
        Email: bghuang@foxmail.com
